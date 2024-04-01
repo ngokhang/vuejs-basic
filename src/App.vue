@@ -1,25 +1,12 @@
 <template>
   <div class="wrapper">
-    <StudentList :studentList="studentList" @selectStudent="selectStudent" />
-    <div class="options">
-      <button @click="moveToRight">Move to right</button>
-      <button @click="moveToLeft">Move to left</button>
-      <button @click="console.log(studentListFiltered)">View</button>
-    </div>
-    <div class="students-selected">
-      <div
-        v-for="student in studentListFiltered"
-        :key="student.id"
-        class="students-selected__item"
-      >
-        <p>{{ student.name }}</p>
-        <input
-          type="checkbox"
-          @click="selectStudent(studentListFiltered, student.id)"
-          v-model="student.selected"
-        />
-      </div>
-    </div>
+    <StudentList
+      :studentList="studentList"
+      :studentListFiltered="studentListFiltered"
+      @selectStudent="selectStudent"
+      @moveToLeft="moveToLeft"
+      @moveToRight="moveToRight"
+    />
   </div>
 </template>
 <script>
@@ -79,27 +66,4 @@ export default {
   },
 };
 </script>
-<style scoped>
-.wrapper {
-  display: flex;
-  gap: 40px;
-}
-.options {
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
-  padding: 5px;
-  border: 1px solid black;
-}
-.students-selected {
-  width: 300px;
-  padding: 5px;
-  border: 1px solid black;
-}
-.students-selected__item {
-  display: flex;
-  gap: 10px;
-}
-</style>
+<style scoped></style>
