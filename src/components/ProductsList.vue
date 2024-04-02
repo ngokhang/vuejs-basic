@@ -54,7 +54,7 @@ export default {
     },
   },
   computed: {
-    totalCost() {
+    totalCost: function() {
       return this.productsBought.reduce((acc, curr) => acc + (curr.price * curr.quantity), 0);
     },
   },
