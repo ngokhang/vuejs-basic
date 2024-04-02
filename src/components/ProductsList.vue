@@ -58,7 +58,15 @@ export default {
       return this.productsBought.reduce((acc, curr) => acc + (curr.price * curr.quantity), 0);
     },
   },
-
+  watch: {
+    productsBought: {
+      handler: function() {
+        const test = this.productsBought.reduce((acc, curr) => acc + (curr.price * curr.quantity), 0);
+        console.log(test);
+      },
+      deep: true,
+    },
+  },
 };
 </script>
 
