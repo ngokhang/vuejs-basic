@@ -1,4 +1,4 @@
-<template lang="">
+<template>
   <div>Loading...</div>
 </template>
 <script>
